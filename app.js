@@ -1,11 +1,13 @@
-// object is a name value pair (include function, properties)
-var person = {
-    firstname: 'Rishabh',
-    lastname: 'Gupta',
-    greet: function(){
-        console.log('Hello, ' + this.firstname + this.lastname);
-    }
+function Person(firstname, lastname){
+    this.firstname = firstname;
+    this.lastname = lastname;
+};
+
+// create a prototype inheritance
+Person.prototype.greeting = function(){
+    console.log('Hello ' + this.firstname + ' ' + this.lastname);
 }
-person.greet();
-// proprty of the object can also be accessed as below
-console.log(person['firstname']);
+var rish = new Person('Rishabh','Gupta');
+var rah = new Person('Rishabh12','Gupta1212');
+rish.greeting();
+rah.greeting();
