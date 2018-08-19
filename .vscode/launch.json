@@ -8,7 +8,9 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/app.js"
+            //"program": "${file}"
+            "program": "/Users/rishabhgupta/Documents/NodeJS/nodejs/app.js",
+            "trace": true
         }
     ]
 }
