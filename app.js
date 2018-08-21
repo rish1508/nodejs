@@ -1,14 +1,16 @@
-var Emitter = require('./emitter');
-
+// inbuild events.js from node
+var Emitter = require('events');
+// another way of using naming conventions
+var emitting = require('./config').events;
 var emmtr = new Emitter();
-emmtr.on('greet', function(){
+emmtr.on(emitting.GREETING, function(){
     console.log('Hello!');
 });
 
-emmtr.on('greet', function(){
+emmtr.on(emitting.GREETING, function(){
     console.log('Hellos!!');
 });
 
 console.log('Hey!');
 // those two functions in the array ran coz of emmiting
-emmtr.emmit('greet');
+emmtr.emit(emitting.GREETING);
