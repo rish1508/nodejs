@@ -1,16 +1,7 @@
-// inbuild events.js from node
-var Emitter = require('events');
-// another way of using naming conventions
-var emitting = require('./config').events;
-var emmtr = new Emitter();
-emmtr.on(emitting.GREETING, function(){
-    console.log('Hello!');
-});
-
-emmtr.on(emitting.GREETING, function(){
-    console.log('Hellos!!');
-});
-
-console.log('Hey!');
-// those two functions in the array ran coz of emmiting
-emmtr.emit(emitting.GREETING);
+var http = require('http');
+// method to create a server
+http.createServer(function(req, res){
+    res.writeHead(200, {'Content-Type': 'text/plain' })
+    // body
+    res.end('Hello world\n');
+}).listen(1337, '127,0,0,1');
