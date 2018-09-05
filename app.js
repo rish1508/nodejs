@@ -1,20 +1,15 @@
-var http = require('http');
-// polling the file from ther server and sending it to response stream
-var fs = require('fs');
-// method to create a server
-http.createServer(function(req, res){
-    if(req.url === '/'){
-        fs.createReadStream(__dirname + '/index.htm').pipe(res);
-    }
-    else if(req.url === '/api'){
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        var obj = {
-            firstname : 'Rishabh',
-            lastname : 'Gupta'
-        };
-        res.end(JSON.stringify(obj));
-    }else{
-        res.writeHead(404);
-        res.end();
-    }
-}).listen(8080, '127.0.0.1');
+var express = require('express');
+
+var app = express();
+
+var port = process.env.PORT || 3000;
+
+app.get('/', function(req, res){
+    res.send('<html><head></head><body><h1>Hello WOrld!</h1></body></html>');
+});
+
+app.get('/api', function(req,res){
+    res.json({ firstname : 'Rish'});
+});
+
+app.listen(port);

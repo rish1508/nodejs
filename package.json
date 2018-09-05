@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/rish1508/nodejs/issues"
   },
-  "homepage": "https://github.com/rish1508/nodejs#readme"
+  "homepage": "https://github.com/rish1508/nodejs#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "jasmine-node": "^1.15.0",
+    "moment": "^2.22.2"
+  }
 }
